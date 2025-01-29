@@ -25,7 +25,7 @@ public class Song
         this.title = title;
         this.artist = artist;
         this.durationInSeconds = durationInSeconds;
-        liked = false;
+        this.liked = false;
         
     }
     
