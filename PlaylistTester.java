@@ -3,8 +3,8 @@
  * playlist in the main method. You don't need to follow the testing specifications of this exactly
  * if you want to write your own separate tester instead.
  * Note that there's no need for a Scanner in this project-- all of the playlist can be 'hardcoded' into main.
- * @author
- * @version
+ * @author Megan Wang & Bella Duncan
+ * @version 2025-01-24
  */
 public class PlaylistTester {
     public static void main(String[] args) 
@@ -19,10 +19,10 @@ public class PlaylistTester {
          * is something like...
          * p.addSong(new Song(..., ..., ...))
          */
-        playlist.add(new Song("That's So True", "Gracie Abrams", 246));
-        playlist.add(new Song("Close To You", "Gracie Abrams", 345));
-        playlist.add(new Song("BMF", "SZA", 301));
-        playlist.add(new Song("Unwritten", "Natasha Bedingfield", 419));
+        playlist.add(new Song("That's So True", "Gracie Abrams", 166));
+        playlist.add(new Song("Close To You", "Gracie Abrams", 225));
+        playlist.add(new Song("BMF", "SZA", 181));
+        playlist.add(new Song("Unwritten", "Natasha Bedingfield", 259));
         
         
 
@@ -32,14 +32,16 @@ public class PlaylistTester {
 
         System.out.println("\nLiking the songs in position X, Y, Z, etc....\n");
         //Once your songs are 'liked', this should be reflected in the next printout
-        playlist.likeSong(X); //thats so true
-        playlist.likeSong(Z); // bmf
+        playlist.get(0).setLiked(true);
+        playlist.likeSong(playlist.get(0)); //thats so true
+        playlist.likeSong(playlist.get(2)); // bmf
+        
 
         System.out.println("Printing the songs...\n");
         playlist.examineAllSongs();
 
         System.out.println("\nRemoving the song in position A, B, C, etc...\n");
-        playlist.removeSong(X);
+        playlist.removeSong(playlist.get(3));
 
         System.out.println("Printing the songs...\n");
         playlist.examineAllSongs();
@@ -50,7 +52,7 @@ public class PlaylistTester {
 
         System.out.println("\nPrinting the total duration of all songs...\n");
         //Note that the format should look something like minutes:seconds
-        int totalDuration = playlist.getDuration();
+        int totalDuration = playlist.getTotalDuration();
         int minutes = totalDuration / 60;
         int seconds = totalDuration % 60;
 
